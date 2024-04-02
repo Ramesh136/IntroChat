@@ -1,0 +1,351 @@
+body{
+    background-color: #00FF99;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .homeWrapper{
+        width: 65%;
+        height: 80%;
+        // border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        background-color: #fafafa;
+        overflow: hidden;
+
+        .sideBar{
+            flex: 1;
+            // height: 100vh;
+            background-color: aquamarine;
+            position: relative;
+
+            .navBar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 50px;
+                background-color: cadetblue;
+                padding: 5px;
+
+                .logo{
+                    font-weight: bold;
+                    font-size: large;
+                }
+
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    
+
+                    img{
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background-color: #fafafa;
+                    }
+
+                    button{
+                        border: none;
+                        padding: 3px;
+                        background-color: greenyellow;
+                        font-size: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search{
+                border-bottom: 1px solid gray;
+                // padding: 10px;
+                
+                input{
+                    background-color: transparent;
+                    padding: 10px;
+                    border: none;
+                    color: black;
+                    outline: none;
+                    margin-bottom: 5px;
+                    font-size: 14px;
+
+                    &::placeholder{
+                        color: gray;
+                    }
+                }
+            }
+
+            .userChat{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                // border-bottom: 1px solid gainsboro;
+                padding-bottom: 10px;
+                padding: 5px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: rgba(158, 148, 148, 0.541);
+                }
+                img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    background-color: #fbfbfb;
+                }
+                .userChatInfo{
+                    span{font-size: 18px ; font-weight: 500;}
+                    p{font-size: 14px; color: gray;}
+                }
+            }
+        }
+
+        .chatBox{
+            flex: 2;
+            background-color: beige;
+            
+            
+            .chatheader{
+                // border-bottom: 1px solid gray;
+                background-color: rgb(145, 209, 145);
+                padding: 5px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-color: rgb(98, 134, 181);
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+                }
+                
+                .icons{
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    img{
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    // background-color: black;
+                }
+            }
+            }
+
+            .chatInput{
+              
+                padding: 10px;
+                height: 50px;
+
+                background-color: white;
+                // padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                width: 100%;
+                border: none;
+                outline: none;
+                
+                font-size: 18px;
+
+                &::placeholder {
+                    color: lightgray;
+                }
+                }
+
+                .send {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        // background-color: #2f2d52;
+                        cursor: pointer;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 8px 15px;
+                        color: white;
+                        background-color: #8da4f1;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .messages{
+                height: calc(100% - 140px);
+                padding: 5px;
+                overflow-y: scroll;
+
+                .message{
+                    display: flex;
+                    // align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px ;
+                    padding: 10px;
+                    .messageInfo{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 4px;
+                        span{
+                            color: gray;
+                            font-size: 11px
+                        };
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: #2f2d52;
+                        }
+                    }
+                    .messageContent{
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column; 
+                        gap: 10px;
+                        padding: 5px;
+                        p{
+                            background-color: #8da4f1;
+                            padding: 5px;
+                            border-radius: 0px 10px 10px 10px;
+                            width: fit-content;
+                        }
+                        img{
+                            width: 300px;
+                            height: 200px;
+                          
+                        }
+                    }
+
+                    &.owner{
+                        flex-direction: row-reverse;
+                        .messageContent{
+                            align-items: flex-end;
+                            p{
+                            background-color: #00FF99;
+                            border-radius: 10px 0px 10px 10px;
+                        }
+
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+
+.formContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .formWrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 60px;
+        background-color: #fafafa;
+        width: 250px;
+        align-items: center;
+        color: rgb(18, 17, 17);
+        gap: 10px;
+        border-radius: 10px;
+
+        p{
+            font-size: small;
+            margin-top: 10px;
+        }
+
+        .logo{
+            font-size: x-large;
+            font-weight: 800;
+            
+        }
+        
+        form{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: gray;
+                cursor: pointer;
+            }
+
+            img{
+                width: 25px;
+            }
+
+            input:focus {
+                outline: 0;
+            }
+
+            .file{
+                font-size: small;
+            }
+
+            button {
+                background-color: #00FF99;
+                color: rgb(37, 34, 34);
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+
+             input{
+            padding: 15px;
+            border: none;
+            background-color: #fbfbfb;
+            border-bottom: 1px solid #00FF99;
+            &::placeholder {
+          color: rgb(191, 188, 188);
+           }
+
+           
+
+           span{
+            font-size: x-small;
+           }
+        
+        }
+
+        }
+
+       
+
+    }
+}
