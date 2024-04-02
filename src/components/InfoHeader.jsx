@@ -7,7 +7,6 @@ import { ChatContext } from '../context/chatContext'
 const InfoHeader = () => {
 
   const {data} = useContext(ChatContext)
-  console.log(data)
   return (
     <div className="chatheader">
       <div className="user">

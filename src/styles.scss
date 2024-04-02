@@ -127,6 +127,7 @@ body{
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
+                    object-fit: cover;
                     background-color: rgb(98, 134, 181);
                 }
                 span{
@@ -219,6 +220,7 @@ body{
                             width: 40px;
                             height: 40px;
                             border-radius: 50%;
+                            object-fit: cover;
                             background-color: #2f2d52;
                         }
                     }
@@ -237,7 +239,7 @@ body{
                         img{
                             width: 300px;
                             height: 200px;
-                          
+                          object-fit: cover;
                         }
                     }
 

@@ -14,7 +14,6 @@ const Search = () => {
   const {dispatch} =useContext(ChatContext)
 
   const handleSelect = async ()=>{
-    console.log("clicked")
     const combinedId = user.uid >suser.uid?user.uid +suser.uid : suser.id +user.id
     try {
    
@@ -23,7 +22,7 @@ const Search = () => {
 
       if (!res.exists()) {
         //create a chat in chats collection
-          console.log("error not occured");
+         
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
         //create user chats
@@ -42,7 +41,7 @@ const Search = () => {
         catch(err){
           console.log(err)
         }
-        // console.log("done");
+        
         await updateDoc(doc(db, "userChats", suser.uid), {
 
           [combinedId + ".userInfo"]: {
@@ -74,7 +73,7 @@ const Search = () => {
 
     try {
       const querySnapshot = await getDocs(q);
-      console.log(querySnapshot.size)
+     
       if (querySnapshot.size===1){
         querySnapshot.forEach((doc) => {
           setsUser(doc.data());

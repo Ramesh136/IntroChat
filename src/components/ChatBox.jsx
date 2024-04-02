@@ -7,7 +7,7 @@ import { ChatContext } from '../context/chatContext';
 const ChatBox = () => {
 
   const {data} = useContext(ChatContext)
-  console.log(data)
+  
 
   if(data.chatId==="null")
     return <div className='chatBox'></div>

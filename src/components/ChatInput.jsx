@@ -17,7 +17,7 @@ const ChatInput = () => {
   const {data} = useContext(ChatContext)
 
   const handleSend = async()=>{
-      console.log(img)
+    
      if (img) {
        const storageRef = ref(storage, uuid());
 
@@ -89,7 +89,6 @@ const ChatInput = () => {
           style={{ display: "none" }}
           id="file"
           onChange={(e) => {
-            console.log(e)
             setImg(e.target.files[0])}}
         />
         <label htmlFor="file" >
