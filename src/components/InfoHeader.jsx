@@ -10,7 +10,7 @@ const InfoHeader = () => {
   return (
     <div className="chatheader">
       <div className="user">
-        <img src={data.user.photoURL} />
+        <img src={data.user.photoURL?data.user.photoURL:null} alt='no img'/>
         <span>{data.user.displayName}</span>
       </div>
 
