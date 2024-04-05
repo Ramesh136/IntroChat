@@ -10,7 +10,7 @@ const Login = () => {
 
   const signInHandler = async (e)=>{
     e.preventDefault()
-    console.log(e)
+   
     
     const email = e.target[0].value;
     const password = e.target[1].value;

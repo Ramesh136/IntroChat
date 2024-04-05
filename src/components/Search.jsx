@@ -14,11 +14,15 @@ const Search = () => {
   const {dispatch} =useContext(ChatContext)
 
   const handleSelect = async ()=>{
-    const combinedId = user.uid >suser.uid?user.uid +suser.uid : suser.id +user.id
+    const combinedId =
+      user.uid > suser.uid
+        ? user.uid + suser.uid
+        : suser.uid + user.uid
+    console.log(combinedId)
     try {
-   
+      
       const res = await getDoc(doc(db, "chats", combinedId));
-     
+      
 
       if (!res.exists()) {
         //create a chat in chats collection
@@ -66,6 +70,7 @@ const Search = () => {
   
 
   const fetchUser = async ()=>{
+    console.log('fetchig..')
     const q = query(
       collection(db, "users"),
       where("displayName", "==", userInput)
@@ -73,20 +78,26 @@ const Search = () => {
 
     try {
       const querySnapshot = await getDocs(q);
-     
+      console.log(querySnapshot)
       if (querySnapshot.size===1){
+        console.log("User present")
         querySnapshot.forEach((doc) => {
           setsUser(doc.data());
+         
         });
       }
-      else
-        setsUser(null)
+      else{
+        setsUser(null);
+        console.log("User not present");
+      }
+       
         
 
     } catch (err) {
       console.log(err)
       setError(true);
     }
+    setError(false)
   }
 
   const searchHandler = (e)=>{
